@@ -43,6 +43,9 @@ def main():
     if os.environ.get("GITHUB_REPOSITORY") != REPOSITORY:
         raise RuntimeError("Wrong repository")
     remaining = LAUNCH - time.time()
+    if remaining < -24 * 3600:
+        print("The launch publication window has ended.")
+        return
     if not verified_release()["draft"]:
         if remaining > 0:
             raise RuntimeError("The release is already public before launch")
