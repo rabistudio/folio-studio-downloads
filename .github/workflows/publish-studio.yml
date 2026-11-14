@@ -1,0 +1,25 @@
+name: Publish Folio Studio 1.9.10 at launch
+on:
+  workflow_dispatch:
+  schedule:
+    # Start ahead of midnight in Rome; verify the UTC deadline inside the job.
+    - cron: '17,38 22 9 1 *'
+    - cron: '2,17,42 23 9 1 *'
+    - cron: '13 0,1,6,12 10 1 *'
+permissions:
+  contents: write
+concurrency:
+  group: publish-folio-studio-1-9-10
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify draft and open the release at launch
+        run: python3 .github/scripts/publish-studio.py
+        env:
+          GH_TOKEN: ${{ github.token }}
