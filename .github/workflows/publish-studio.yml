@@ -1,4 +1,4 @@
-name: Publish Folio Studio 1.9.10 at launch
+name: Publish Folio Studio 1.9.11 at launch
 on:
   workflow_dispatch:
   schedule:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: publish-folio-studio-1-9-10
+  group: publish-folio-studio-1-9-11
   cancel-in-progress: false
 jobs:
   release:
