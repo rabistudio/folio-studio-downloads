@@ -1,4 +1,4 @@
-"""Publish the verified Folio 1.9.14 draft at the official Rome launch."""
+"""Publish the verified Folio 1.9.15 draft at the official Rome launch."""
 import json
 import os
 import subprocess
@@ -6,14 +6,14 @@ import time
 from datetime import datetime, timezone
 
 REPOSITORY = "rabistudio/folio-studio-downloads"
-RELEASE_ID = 452935186
+RELEASE_ID = 452974129
 LAUNCH = int(datetime(2027, 1, 9, 23, 0, tzinfo=timezone.utc).timestamp())
 FILES = {
-    "FolioStudio-1.9.14-mac-arm64.dmg": (
-        147630759, "79a68e5ed55d6e80c2da0923e05f3f6ab081753c06d1669a64e965ede52480d7"
+    "FolioStudio-1.9.15-mac-arm64.dmg": (
+        147635993, "6e548d1080f682541b03128f4f5bc85bcd8a2b23527f529c3142e3a3ca8252b1"
     ),
-    "FolioStudio-Setup-1.9.14.exe": (
-        129190471, "85eb2ee6be9aa2c6cab6e5e26746771ed5facfb13ae4447447a5cd147f2fcb43"
+    "FolioStudio-Setup-1.9.15.exe": (
+        129189843, "0025081383780772aba65155846c8b154ddad77ef0a148d335ef9d3c232275b2"
     ),
 }
 
@@ -27,7 +27,7 @@ def github(method="GET", body=None):
 
 def verified_release():
     release = github()
-    if release["id"] != RELEASE_ID or release["tag_name"] != "v1.9.14" or release["prerelease"]:
+    if release["id"] != RELEASE_ID or release["tag_name"] != "v1.9.15" or release["prerelease"]:
         raise RuntimeError("Unexpected release identity or channel")
     assets = release["assets"]
     if len(assets) != len(FILES) or {a["name"] for a in assets} != set(FILES):
@@ -60,7 +60,7 @@ def main():
         published = github("PATCH", {"draft": False, "make_latest": "true"})
         if published["draft"] or published["id"] != RELEASE_ID:
             raise RuntimeError("Publication was not confirmed")
-    print("Folio Studio 1.9.14 is public.")
+    print("Folio Studio 1.9.15 is public.")
 
 
 if __name__ == "__main__":
