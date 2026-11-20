@@ -2,10 +2,10 @@ name: Publish Folio Studio 1.9.15 at launch
 on:
   workflow_dispatch:
   schedule:
-    # Start ahead of midnight in Rome; verify the UTC deadline inside the job.
-    - cron: '17,38 22 9 1 *'
-    - cron: '2,17,42 23 9 1 *'
-    - cron: '13 0,1,6,12 10 1 *'
+    # Start ahead of 10:00 in Rome; verify the UTC deadline inside the job.
+    - cron: '17,38 8 10 12 *'
+    - cron: '2,17,42 9 10 12 *'
+    - cron: '13 10,11,16,22 10 12 *'
 permissions:
   contents: write
 concurrency:
