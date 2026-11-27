@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 REPOSITORY = "rabistudio/folio-studio-downloads"
 RELEASE_ID = 460808429
-LAUNCH = int(datetime(2026, 12, 10, 9, 0, tzinfo=timezone.utc).timestamp())
+LAUNCH = int(datetime(2027, 1, 10, 9, 0, tzinfo=timezone.utc).timestamp())
 FILES = {'FolioStudio-1.9.17-mac-arm64.dmg': (147639833,
                                       '8a23aa19338c9599bb9d219c5ab61264332a050a40f5077a2fb9d0816398d393'),
  'FolioStudio-Setup-1.9.17.exe': (129357728,
