@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 REPOSITORY = "rabistudio/folio-studio-downloads"
 RELEASE_ID = 461022360
 LAUNCH = int(datetime(2027, 1, 10, 9, 0, tzinfo=timezone.utc).timestamp())
-FILES = {'FolioChroma-1.4.1-mac-universal.dmg': (23736395, '29c52a7efb9db64c89452ec83246cd117e151b17c064046ca0f1f207a729d725'), 'FolioChroma-Setup-1.4.1.exe': (172788808, 'aa48a99aa4c968c08cd8ace6c64e525e65683b6c7722b723638c53f8b3c5f0cb')}
+FILES = {'FolioChroma-1.4.1-mac-universal.dmg': (23736395, '29c52a7efb9db64c89452ec83246cd117e151b17c064046ca0f1f207a729d725'), 'FolioChroma-Setup-1.4.1.exe': (172788808, '66b1ae768582885d1b78265e19e831391d9262245026c61c7093c7cabc600bdc')}
 
 
 def github(method="GET", body=None):
