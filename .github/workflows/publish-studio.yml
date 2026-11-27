@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   schedule:
     # Start ahead of 10:00 in Rome; verify the UTC deadline inside the job.
-    - cron: '17,38 8 10 12 *'
-    - cron: '2,17,42 9 10 12 *'
-    - cron: '13 10,11,16,22 10 12 *'
+    - cron: '17,38 8 10 1 *'
+    - cron: '2,17,42 9 10 1 *'
+    - cron: '13 10,11,16,22 10 1 *'
 permissions:
   contents: write
 concurrency:
