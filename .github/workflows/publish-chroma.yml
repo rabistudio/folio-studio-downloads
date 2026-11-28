@@ -1,4 +1,4 @@
-name: Publish Folio Chroma 1.4.1 at launch
+name: Publish Folio Chroma 1.4.2 at launch
 on:
   workflow_dispatch:
   schedule:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: publish-folio-chroma-1-4-1
+  group: publish-folio-chroma-1-4-2
   cancel-in-progress: false
 jobs:
   release:
